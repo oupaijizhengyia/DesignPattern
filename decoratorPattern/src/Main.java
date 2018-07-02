@@ -12,8 +12,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         Document document = new Purchase();
-        Document approverDeco = new Approver(document);
-        Document deleDeco = new Deleter(approverDeco);
+        Approver approverDeco = new Approver(document);
+        approverDeco.approver();
+        Document deleDeco = new Deleter(document);
         deleDeco.display();
 
         System.out.println("---------------------");
