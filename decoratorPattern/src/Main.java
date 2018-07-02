@@ -2,6 +2,10 @@ import bantouming.Approver;
 import bantouming.Deleter;
 import bantouming.Document;
 import bantouming.Purchase;
+import encrptExample.Encrpt;
+import encrptExample.MoveDecorator;
+import encrptExample.ReverseDecorator;
+import encrptExample.StringBean;
 import touming.Hero;
 import touming.Skill;
 import touming.SkillQ;
@@ -22,6 +26,16 @@ public class Main {
         Skill q = new SkillQ(hero);
         Skill w = new SkillW(q);
         w.display();
+
+        System.out.println("---------------------");
+        Encrpt obj = new StringBean();
+        obj.setS("李四");
+        Encrpt e1,e2,e3;
+        e1 = new MoveDecorator(obj);
+        e2 = new MoveDecorator(e1);
+        e3 = new ReverseDecorator(e2);
+        e3.encrpt(obj);
+        System.out.println(obj.getS());
 
     }
 }

@@ -5,7 +5,7 @@ package touming;
  * Author: yeyang
  * Date: 2018/7/2 10:24
  */
-public class Study implements Skill {
+public class Study extends Skill {
     private Skill skill;
     public Study(Skill skill){
         this.skill = skill;

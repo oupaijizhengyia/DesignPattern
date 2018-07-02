@@ -1,5 +1,5 @@
 package touming;
 
-public interface Skill {
-    void display();
+public abstract class Skill {
+    public abstract void display();
 }
