@@ -7,9 +7,12 @@ package com.company;
  */
 public class SpecificEncrypt {
     public String MS5Encrypt(String s){
+        int hashvalue = 3;
         byte[] bytes = s.getBytes();
-        int a = bytes.length;
-        int re = ((a << 2) + 5)*3 % 16;
+        for (int i = 0;i<bytes.length;i++){
+            hashvalue *= bytes[i] << 2;
+        }
+        hashvalue = (hashvalue << 2) % 16;
         return re+"";
     }
 }
